@@ -1,0 +1,43 @@
+@import '../../styles/globalStyles';
+
+.home {
+    background-color: #f7f7f7;
+    &__welcome {
+        margin-top: 0;
+        padding-top: 5rem;
+        margin-bottom: 7rem;
+        font-size: 35px;
+    }
+    &-buttons {
+        width: 35vw;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-bottom: 5rem;
+        &__english {
+            background: #C70025;
+            color: #fff;
+            font-size: 18px;
+            border: 0;
+            padding: 12px 0;
+            width: 15vw;
+            border-radius: 2px;
+        }
+        &__japanese {
+            background: #C70025;
+            color: #fff;
+            font-size: 18px;
+            border: 0;
+            border-color: black;
+            padding: 12px 0;
+            width: 15vw;
+            border-radius: 2px;
+        }
+    }
+    &-footer {
+        margin-top: 30px;
+        &__image {
+            width: 100vw;
+        }
+    }
+}

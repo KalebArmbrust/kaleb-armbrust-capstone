@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    &-left {
+        &__flag {
+            object-fit: contain;
+            width: 100px;
+        }
+        &__link {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    &-middle {
+        &__title {
+            font-size: 25px;
+        }
+    }
+
+    &-right {
+        display: flex;
+        margin-left: auto;
+        margin-right: 1vw;
+        width: 13vw;
+        justify-content: space-evenly;
+        &__home {
+            font-size: 25px;
+        }
+        &__about {
+            font-size: 25px;
+        }
+        &__link {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}

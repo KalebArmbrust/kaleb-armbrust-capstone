@@ -1,0 +1,21 @@
+@import '../../styles/globalStyles';
+
+.about {
+    &-info {
+            background-image: url('../../assets/images/main-image.jpg');
+            background-size: cover;
+            object-fit: cover;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 45.5rem;
+        &__text {
+            margin-left: auto;
+            margin-right: 80px;
+            margin-top: 0;
+            padding-top: 80px;
+            font-family: $japan;
+            font-size: 20px;
+            max-width: 400px;
+        }
+    }
+}
