@@ -13,7 +13,7 @@ class Home extends React.Component {
 
     japanese = (event) => {
         const japanese = io('/japanese');
-        japanese.on('Chat2', function(data) {
+        japanese.on('Chat', function(data) {
         })
         this.props.routerprops.history.push('/chat/japanese');
     }
