@@ -1,7 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client';
-import './Home.scss';
 import Tokyo from '../../assets/images/tokyo.png';
+import './Home.scss';
 
 class Home extends React.Component {
     english = (event) => {

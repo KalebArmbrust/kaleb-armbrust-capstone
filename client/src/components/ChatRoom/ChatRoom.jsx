@@ -1,6 +1,6 @@
 import React from 'react';
-import './ChatRoom.scss';
 import io from 'socket.io-client';
+import './ChatRoom.scss';
 
 class ChatRoom extends React.Component {
     state = {
@@ -13,7 +13,6 @@ class ChatRoom extends React.Component {
     componentDidMount() {
         this.setState({socket: io.connect('http://localhost:8080')}, () => {
             this.state.socket.on('chat', (data) => {
-                console.log(data);
                 this.setState({
                     messages: [...this.state.messages, {message: data.message, handle: data.handle}]
                 })
@@ -24,7 +23,6 @@ class ChatRoom extends React.Component {
     clickHandler = (event) => {
         event.preventDefault();
         if (this.props.routerprops.hasOwnProperty('match')) {
-            console.log(this.props)
             this.state.socket.emit('chat', {
                 message: this.state.localmessage,
                 handle: this.state.localhandle,

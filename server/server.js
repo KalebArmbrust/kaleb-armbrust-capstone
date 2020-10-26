@@ -23,19 +23,3 @@ io.on('connection', (socket) => {
         }
     });
 });
-
-// const english = io.of('/english');
-
-// english.on('connection', function(socket) {
-//     socket.join('/english')
-//     console.log('someone connected to english');
-//     english.emit('Welcome!');
-// })
-
-// const japanese = io.of('/japanese');
-
-// japanese.on('connection', function(socket) {
-//     socket.join('/japanese')
-//     console.log('someone connected to japanese');
-//     japanese.emit('ようこそ!');
-// })
