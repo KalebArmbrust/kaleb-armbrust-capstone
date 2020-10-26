@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 var socket = require('socket.io');
 const hepburn = require('hepburn');
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'client/build')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+});
 
 const server = app.listen(8080, () => {
     console.log('Server Started on http://localhost:8080');
