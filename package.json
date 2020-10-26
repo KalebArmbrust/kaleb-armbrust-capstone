@@ -3,10 +3,11 @@
     "description": "Social Learning Platform",
     "version": "1.0.0",
     "engines": {
-        "node": "12.x"
+        "node": "12.18",
+        "npm": "6.14"
     },
     "scripts": {
-        "start": "node ./server/server.js && cd ./client && npm start",
-        "build": "cd ./client && npm run build"
+        "build": "cd ./client && npm i && npm run build",
+        "start": "node ../server/server.js && npm start"
     }
 }
