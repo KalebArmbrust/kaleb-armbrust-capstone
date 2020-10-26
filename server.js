@@ -9,8 +9,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'))
 });
 
-const server = app.listen(8080, () => {
-    console.log('Server Started on http://localhost:8080');
+const server = app.listen(process.env.PORT || 8080, () => {
+    console.log('Server Started on ' + process.env.PORT);
 });
 
 const io = socket(server);
