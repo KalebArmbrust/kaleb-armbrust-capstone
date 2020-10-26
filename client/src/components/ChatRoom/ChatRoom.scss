@@ -16,7 +16,7 @@
         overflow: auto;
         background: #f9f9f9;
         @include mobile {
-            padding-top: 100px;
+            padding-bottom: 100px;
         }
 
         &-output {
