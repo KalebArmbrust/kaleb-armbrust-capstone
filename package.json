@@ -1,0 +1,8 @@
+{
+    "name": "Chatto",
+    "description": "Social Learning Platform",
+    "version": "1.0.0",
+    "engines": {
+        "node": "12.x"
+    }
+}
