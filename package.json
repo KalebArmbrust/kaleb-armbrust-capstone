@@ -4,5 +4,9 @@
     "version": "1.0.0",
     "engines": {
         "node": "12.x"
+    },
+    "scripts": {
+        "start": "node ./server/server.js && cd ./client && npm start",
+        "build": "cd ./client && npm run build"
     }
 }
