@@ -13,7 +13,11 @@ class ChatRoom extends React.Component {
     componentDidMount() {
         this.setState({socket: io.connect('http://localhost:8080')}, () => {
             this.state.socket.on('chat', (data) => {
-                console.log(data);
+                this.setState({
+                    messages: [...this.state.messages, {message: data.message, handle: data.handle}]
+                })
+            });
+            this.state.socket.on('chat2', (data) => {
                 this.setState({
                     messages: [...this.state.messages, {message: data.message, handle: data.handle}]
                 })
@@ -24,8 +28,15 @@ class ChatRoom extends React.Component {
     clickHandler = (event) => {
         event.preventDefault();
         if (this.props.routerprops.hasOwnProperty('match')) {
-            console.log(this.props)
             this.state.socket.emit('chat', {
+                message: this.state.localmessage,
+                handle: this.state.localhandle,
+                language: this.props.routerprops.match.params.language
+            });
+            this.setState({localmessage: ''})
+        };
+        if (this.props.routerprops.hasOwnProperty('match')) {
+            this.state.socket.emit('chat2', {
                 message: this.state.localmessage,
                 handle: this.state.localhandle,
                 language: this.props.routerprops.match.params.language

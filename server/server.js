@@ -13,7 +13,6 @@ io.on('connection', (socket) => {
     console.log('made socket connection', socket.id);
 
     socket.on('chat', (data) => {
-        console.log(data);
         const kana = hepburn.toHiragana(data.message);
         if (data.language === 'english') {
         io.sockets.emit('chat', data);
@@ -21,7 +20,19 @@ io.on('connection', (socket) => {
         else if (data.language === 'japanese'){
             const japaneseData = {message: kana, handle: data.handle}
             io.sockets.emit('chat', japaneseData);
-            console.log(kana);
+        }
+    });
+
+    const chat2 = io.of('/chat2');
+
+    chat2.on('chat2', (data) => {
+        const kana = hepburn.toHiragana(data.message);
+        if (data.language === 'english') {
+        io.sockets.emit('chat2', data);
+        }
+        else if (data.language === 'japanese'){
+            const japaneseData = {message: kana, handle: data.handle}
+            io.sockets.emit('chat2', japaneseData);
         }
     });
 });

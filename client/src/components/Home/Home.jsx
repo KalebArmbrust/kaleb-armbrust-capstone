@@ -6,14 +6,14 @@ import Tokyo from '../../assets/images/tokyo.png';
 class Home extends React.Component {
     english = (event) => {
         const english = io('/english');
-        english.on('Welcome!', function(data) {
+        english.on('Chat', function(data) {
         })
         this.props.routerprops.history.push('/chat/english')
     }
 
     japanese = (event) => {
         const japanese = io('/japanese');
-        japanese.on('ようこそ!', function(data) {
+        japanese.on('Chat2', function(data) {
         })
         this.props.routerprops.history.push('/chat/japanese');
     }
