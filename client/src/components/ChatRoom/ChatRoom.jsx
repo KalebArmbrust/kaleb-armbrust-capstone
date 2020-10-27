@@ -11,7 +11,7 @@ class ChatRoom extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({socket: io.connect('http://localhost:8080')}, () => {
+        this.setState({socket: io()}, () => {
             this.state.socket.on('chat', (data) => {
                 this.setState({
                     messages: [...this.state.messages, {message: data.message, handle: data.handle}]

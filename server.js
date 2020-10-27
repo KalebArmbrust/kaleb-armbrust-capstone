@@ -3,13 +3,16 @@ const app = express();
 var socket = require('socket.io');
 const hepburn = require('hepburn');
 const path = require('path');
+require('dotenv').config()
+
+const port = process.env.PORT || 5001
 
 app.use(express.static(path.join(__dirname, 'client/build')))
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'))
 });
 
-const server = app.listen(process.env.PORT || 5000, () => {
+const server = app.listen(port, () => {
     console.log('Server Started on ' + process.env.PORT);
 });
 
