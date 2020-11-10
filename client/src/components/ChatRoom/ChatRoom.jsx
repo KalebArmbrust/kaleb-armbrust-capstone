@@ -1,6 +1,6 @@
 import React from 'react';
-import './ChatRoom.scss';
 import io from 'socket.io-client';
+import './ChatRoom.scss';
 
 class ChatRoom extends React.Component {
     state = {
@@ -11,7 +11,7 @@ class ChatRoom extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({socket: io.connect('http://localhost:8080')}, () => {
+        this.setState({socket: io()}, () => {
             this.state.socket.on('chat', (data) => {
                 this.setState({
                     messages: [...this.state.messages, {message: data.message, handle: data.handle}]

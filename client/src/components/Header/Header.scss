@@ -1,5 +1,8 @@
+@import '../../styles/globalStyles';
+
 .header {
     display: flex;
+    background-color: white;
     &-left {
         &__flag {
             object-fit: contain;
@@ -7,31 +10,46 @@
         }
         &__link {
             text-decoration: none;
-            color: black;
+            color: $link;
         }
     }
 
     &-middle {
+        @include mobile {
+            display: none;
+        }
         &__title {
-            font-size: 25px;
+            font-size: $font;
+            margin-bottom: 0;
         }
     }
 
     &-right {
         display: flex;
         margin-left: auto;
-        margin-right: 1vw;
-        width: 13vw;
+        width: 15vw;
         justify-content: space-evenly;
+        @include tablet {
+            width: 25vw;
+        }
+        @include mobile {
+            width: 50vw;
+        }
         &__home {
-            font-size: 25px;
+            font-size: $font;
+            margin-bottom: 0;
         }
         &__about {
-            font-size: 25px;
+            font-size: $font;
+            margin-bottom: 0;
+            margin-right: 1rem;
+            @include tablet {
+                margin-right: 0;
+            }
         }
         &__link {
             text-decoration: none;
-            color: black;
+            color: $link;
         }
     }
 }

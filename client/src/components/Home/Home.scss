@@ -14,30 +14,32 @@
         justify-content: space-between;
         margin: auto;
         margin-bottom: 5rem;
+        @include mobile {
+            flex-direction: column;
+            width: 50vw;
+        }
         &__english {
-            background: #C70025;
-            color: #fff;
-            font-size: 18px;
-            border: 0;
-            padding: 12px 0;
-            width: 15vw;
-            border-radius: 2px;
+            @include button;
+
+            @include mobile {
+                width: 50vw;
+                margin-bottom: 10px;
+            }
         }
         &__japanese {
-            background: #C70025;
-            color: #fff;
-            font-size: 18px;
-            border: 0;
+            @include button;
             border-color: black;
-            padding: 12px 0;
-            width: 15vw;
-            border-radius: 2px;
+            
+            @include mobile {
+                width: 50vw;
+            }
         }
     }
     &-footer {
         margin-top: 30px;
         &__image {
             width: 100vw;
+            height: 24rem;
         }
     }
 }

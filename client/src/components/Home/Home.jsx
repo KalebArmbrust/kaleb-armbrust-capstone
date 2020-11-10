@@ -1,7 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client';
-import './Home.scss';
 import Tokyo from '../../assets/images/tokyo.png';
+import './Home.scss';
 
 class Home extends React.Component {
     english = (event) => {
@@ -21,7 +21,7 @@ class Home extends React.Component {
     render() {
     return (
         <section className="home">
-            <h1 className="home__welcome">ようこそ! Yōkoso! Welcome!</h1>
+            <h1 className="home__welcome">ようこそ! Youkoso! Welcome!</h1>
             <div className="home-buttons">
                 <button onClick={this.english} className="home-buttons__english">English</button>
                 <button onClick={this.japanese} className="home-buttons__japanese">Japanese</button>
@@ -33,4 +33,4 @@ class Home extends React.Component {
     )
 }}
 
-export default Home
+export default Home;
