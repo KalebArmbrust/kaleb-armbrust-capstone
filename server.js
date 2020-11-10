@@ -22,10 +22,6 @@ io.on('connection', (socket) => {
     console.log('made socket connection', socket.id);
 
     socket.on('chat', (data) => {
-<<<<<<< HEAD:server/server.js
-        console.log('chat', data);
-=======
->>>>>>> master:server.js
         const kana = hepburn.toHiragana(data.message);
         if (data.language === 'english') {
         io.sockets.emit('chat', data);
